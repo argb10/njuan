@@ -1,0 +1,19 @@
+NJUAN
+
+Requisitos:
+Simple version de "nmap <ip>"
+
+-Escanea los primeros 1000 puertos de una ip dada
+-Muestra: versión, ip, si el host esta activo, info de los puertos y resumen del escaneo.
+
+-Usar C++
+-Funcionar en KaliLinux
+
+Pasos:
+Check:
+-Comprobar como se crea un proyecto de C++ para KaliLinux
+-Preparar el entorno de desarrollo
+-Ejecutar un hola mundo
+
+En desarrollo:
+-Crear el proyecto paso o paso
