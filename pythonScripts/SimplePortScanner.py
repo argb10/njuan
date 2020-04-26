@@ -2,7 +2,10 @@
 """
 Created on Sun Apr 26 11:17:27 2020
 
-@author: sentdex
+@author: argb10
+
+Core code retrive from    
+sentdex
 link: https://www.youtube.com/watch?v=szm3camsf8k
 """
 import socket
@@ -17,7 +20,11 @@ def pscan(port):
         return True
     except:
         return False
-
-for x in range(80,445):
-    if pscan(x):
-        print('Port ',x,' is open')
+    
+openports = []
+for port in range(1, 81):
+    if pscan(port):
+        print('Port ',port,' is open')
+        openports.append(port)
+    else:
+        print('Port ',port,' is closed')
