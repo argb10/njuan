@@ -2,7 +2,8 @@
 """
 Created on Sun Apr 26 11:17:27 2020
 
-@author: argb
+@author: sentdex
+link: https://www.youtube.com/watch?v=szm3camsf8k
 """
 import socket
 
