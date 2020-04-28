@@ -26,4 +26,12 @@ https://www.youtube.com/watch?v=TE1XQ8U_JNA
 He conseguido programar un simple socket en C (gracias a la guia de https://www.geeksforgeeks.org/socket-programming-cc/).
 Las conexiones a los primeros 1000 puertos funcionan.
 
+28/04 - Entender socket y aislar su creación
+socket() -> http://man7.org/linux/man-pages/man2/socket.2.html
+
+--sock = socket(AF_INET, SOCK_STREAM, 0)
+Socket Creation: AF_INET=IPV4, SOCK_STREAM=safe two way comunication, 
+You can use Internet Protocol: 6=Transmission Control Protocol(TCP) but with 0 we ensure to use the protocol that matches
+the SOCK_STREAM specified.
+
 
