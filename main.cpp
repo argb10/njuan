@@ -8,7 +8,7 @@ int create_socket_tcp(){
     //Socket Creation: AF_INET=IPV4, SOCK_STREAM=safe two way comunication, 0=standard protocol to the sock_stream specified
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
     { 
-        printf("\n Socket creation error \n"); 
+        printf("\n Njuan: Socket creation error \n"); 
         return -1; 
     }
     else 
@@ -49,18 +49,27 @@ void check_from_1_to_1000(char const *TARGET){
 void check_from_1_to_65535(char const *TARGET){
 
 	int sock = create_socket_tcp();	
-	for(int port=1 ; port < 65535 ; port++)
+	for(int port=1 ; port < 65535 ; port++){
+        //printf("Scaning %d\n",port);
 		if(port_is_open(TARGET, port, sock) == 0)
 			printf("Port %d: Open\n", port);
+        sleep(0.5);
+    }
 }
 
 int main()
 {
   	printf("NJuan!\n");
 	
+    /*Check my postgres at 5432
+    int sock = create_socket_tcp();
+    if(port_is_open("127.0.0.1", 5432, sock) == 0)
+        printf("Port %d: Open\n", 5432);
+    */
 	//List ports from localhost
-	check_from_1_to_1000("127.0.0.1"); 
-  	//check_from_1_to_65535("127.0.0.1"); 
+	//check_from_1_to_1000("127.0.0.1"); 
+    printf("--------------------------------\n");
+  	check_from_1_to_65535("127.0.0.1"); 
 
   	return 0;
 }

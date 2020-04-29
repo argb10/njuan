@@ -12,7 +12,7 @@ import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server = 'pythonprogramming.net'
+server = '127.0.0.1'
 
 def pscan(port):
     try:
@@ -22,9 +22,11 @@ def pscan(port):
         return False
     
 openports = []
-for port in range(1, 81):
+for port in range(1, 65535):
     if pscan(port):
         print('Port ',port,' is open')
         openports.append(port)
     else:
         print('Port ',port,' is closed')
+
+print(openports)

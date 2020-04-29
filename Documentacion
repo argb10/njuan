@@ -34,4 +34,7 @@ Socket Creation: AF_INET=IPV4, SOCK_STREAM=safe two way comunication,
 You can use Internet Protocol: 6=Transmission Control Protocol(TCP) but with 0 we ensure to use the protocol that matches
 the SOCK_STREAM specified.
 
+29/04 - Solucionar el escaneo de todos los puertos
+No acabo de entender porque no funciona el escaneo completo.
+Puedes ser porque se ejecuta muy rapido o porque hay un error en mi codigo. Seguiremos en un par de semanas
 
