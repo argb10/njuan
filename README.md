@@ -1,10 +1,11 @@
 # njuan
 
-Simple code of nmap for learning purpose:
+Simple code of Nmap for learning purposes.
 
-Usage: 
+## Usage: 
 
 ```
+chmod +x main
 ./main <ip> (-p-)
 
 -p-: optional parameter to scan till 65535
