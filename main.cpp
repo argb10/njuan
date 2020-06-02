@@ -39,12 +39,9 @@ bool port_is_open(char const *TARGET, int PORT){
     close(sock);
 
     //Shoulf I do the sleep here?----------------
-    //sleep(0.0001);
+    //sleep(0.00000000001);
 
-    if (status < 0)
-        return -1; //Connection Failed
-    else
-    	return 0;
+    return status;
 }
 //nmap <ip>
 void check_from_1_to_1000(char const *TARGET){
@@ -72,18 +69,24 @@ int main(int argc, char *argv[])
     }
     
     char IP[16] = {0};
-    strcpy(IP, argv[1]); // Copy the IP
+    char ports[4] = {0};
 
-    char ports[3] = {0};
-    if (argc == 3){
-   		strcpy(ports, argv[2]); // Copy the parameter
+    strncpy(IP, argv[1], 16);
+	//IP[9] = '\0';
+    if (argc == 3){    	
+   		strncpy(ports, argv[2], 4); // Copy the parameter
 	}
- 	
+
   	printf("NJuan! :)\n");
+
+  	//printf("argc: %d, argv[0]: %s, argv[1]: %s, argv[2]: %s\n", argc, argv[0], argv[1], argv[2]);
+
+  	printf("Scanning IP: %s , With option: %s\n", IP, ports);
 	
 	if( strcmp(ports, "-p-") == 0)
-		check_from_1_to_65535("127.0.0.1");
+		check_from_1_to_65535(IP);
 	else
-		check_from_1_to_1000("127.0.0.1");
+		check_from_1_to_1000(IP);
+
   	return 0;
 }
