@@ -43,3 +43,7 @@ He conseguido realizar el escaneo de todos los puertos, la clave estaba en cerra
 en que aparecen puertos random como abiertos, no parece haber ningún patrón y he comprobado a través de nmap que los puertos que aparecen están
 cerrados.
 También he añadido el input de usuario (que ya iba haciendo falta) y un poco de limpieza de código (que también iba haciendo falta).
+
+04/06 - Solución del escaneo de puertos
+Habia que utilizar un getaddrinfo() para precisar la información del servicio al que se intenta conectar.
+Para proximas actualizaciones habría que buscar la forma de usar conexiones UDP también:

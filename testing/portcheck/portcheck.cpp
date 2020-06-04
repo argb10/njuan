@@ -10,9 +10,11 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-
-using namespace std;
-
+/*
+This function checks if a TCP port is open: retrieving info, creating socket and trying to connect
+Original code from:
+https://codereview.stackexchange.com/questions/155755/simple-and-effective-port-checker-in-c
+*/
 bool port_is_open(std::string domain, int PORT){
     std::string port = std::to_string(PORT);
 
@@ -52,44 +54,13 @@ bool port_is_open(std::string domain, int PORT){
 
     return retval!=nullptr? true : false;
 }
-//nmap <ip>
-void check_from_1_to_1000(string domain){
 
-	for(int port=1 ; port < 1000 ; port++)
-		if(port_is_open(domain, port))
-			printf("Port %d: Open\n", port);
-}
+int main(int argc, char *argv[]) {
+    std::string domain = "127.0.0.1";
 
-//nmap -p- <ip> 
-void check_from_1_to_65535(string domain){
-	
-	for(int port=1 ; port < 65535 ; port++)
-		if(port_is_open(domain, port))
-			printf("Port %d: Open\n", port);
-}
-
-int main(int argc, char *argv[])
-{
-    if (argc < 2 || argc > 3)
-    {
-        printf ("Please enter the server IP address and range of ports to be scanned\n");
-        printf ("USAGE: %s <IP> (-p-)\n", argv[0]);
-        return(1);
-    }
+    printf("Testing ports Njuan\n");
+    for( int i = 1; i < 65535; i++)
+    if(port_is_open(domain, i))
+        printf("%d is open\n", i);
     
-    string IP = argv[1];
-    string ports = argv[2];
-
-  	printf("NJuan! :)\n");
-
-  	//printf("argc: %d, argv[0]: %s, argv[1]: %s, argv[2]: %s\n", argc, argv[0], argv[1], argv[2]);
-
-  	cout << "Scanning IP: "+ IP +", With option: "+ports << endl;
-	
-	if( ports == "-p-")
-		check_from_1_to_65535(IP);
-	else
-		check_from_1_to_1000(IP);
-
-  	return 0;
 }
