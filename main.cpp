@@ -78,8 +78,11 @@ int main(int argc, char *argv[])
     }
     
     string IP = argv[1];
-    string ports = argv[2];
 
+    string ports;
+    if(argc == 3)
+        string ports = argv[2];
+        
   	printf("NJuan! :)\n");
 
   	//printf("argc: %d, argv[0]: %s, argv[1]: %s, argv[2]: %s\n", argc, argv[0], argv[1], argv[2]);
