@@ -46,4 +46,13 @@ También he añadido el input de usuario (que ya iba haciendo falta) y un poco d
 
 04/06 - Solución del escaneo de puertos
 Habia que utilizar un getaddrinfo() para precisar la información del servicio al que se intenta conectar.
-Para proximas actualizaciones habría que buscar la forma de usar conexiones UDP también:
+Para proximas actualizaciones habría que buscar la forma de usar conexiones UDP también.
+
+05/06 - Tercera solucion del escaneo
+Lo primero ha sido limpiar los breaks y continues que ensucian el flujo del programa.
+Ya he entendido porque usa el for, es porque en un puerto UDP puede haber varios servicios.
+Cambios en los argumentos para no ocupar tanta memoria.
+Todo el mundo dice que es conveniente cerrar las sockets para no crear demasiado file descriptors, pero el scanner falla en la deteccion cuando 
+aplicamos esta mejor practica, de momento se queda así que es como funciona correctamente.
+Las ejecuciones difieren entre el vscode y la terminal. ¯\_( ͡° ͜ʖ ͡°)_/¯
+

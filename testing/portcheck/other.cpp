@@ -44,13 +44,13 @@ bool isPortOpen(const std::string &domain, const std::string &port)
         }
     }
     freeaddrinfo(result);
-    return retval==nullptr ? false : true;
+    return retval==nullptr ? true : false;
 }
 
 int main(int argc, char *argv[]) {
     std::string domain = "127.0.0.1";
 
-    for(int port=1 ; port < 5 ; port++)
+    for(int port=1 ; port < 65535 ; port++)
         if(isPortOpen(domain, std::to_string(port)) == 0)
             printf("Port %d: Open\n", port);
 }
