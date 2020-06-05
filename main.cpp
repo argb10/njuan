@@ -14,6 +14,8 @@
 using namespace std;
 
 bool port_is_open(std::string domain, int PORT){
+    //sleep(0.00000001);
+
     std::string port = std::to_string(PORT);
 
     addrinfo *result;                       // addrinfo structure to proper connection
@@ -63,7 +65,7 @@ void check_from_1_to_1000(string domain){
 //nmap -p- <ip> 
 void check_from_1_to_65535(string domain){
 	
-	for(int port=1 ; port < 65535 ; port++)
+	for(int port=4500 ; port < 65535 ; port++)
 		if(port_is_open(domain, port))
 			printf("Port %d: Open\n", port);
 }
@@ -81,7 +83,7 @@ int main(int argc, char *argv[])
 
     string ports;
     if(argc == 3)
-        string ports = argv[2];
+        ports = argv[2];
         
   	printf("NJuan! :)\n");
 
