@@ -8,5 +8,6 @@ Simple code of Nmap for learning purposes.
 chmod +x main
 ./main <ip> (-p-)
 
+OPTIONAL:
 -p-: optional parameter to scan till 65535
 ```
