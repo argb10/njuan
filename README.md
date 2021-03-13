@@ -4,7 +4,7 @@ Simple code of Nmap for learning purposes.
 
 ## Usage: 
 
-```
+```bash
 chmod +x main
 ./main <ip> (-p-)
 
